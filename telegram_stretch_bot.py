@@ -130,7 +130,7 @@ def schedule_weekday_reminders(application: Application) -> None:
         application.job_queue.run_daily(
             callback=send_reminder,
             time=time(hour=hour, minute=minute, tzinfo=tz),
-            days=(0, 1, 2, 3, 4),
+            days=(1, 2, 3, 4, 5),
             name=f"{JOB_NAME_PREFIX}{hour:02d}_{minute:02d}",
         )
         logger.info("Scheduled reminder for %02d:%02d (%s)", hour, minute, TZ_NAME)
