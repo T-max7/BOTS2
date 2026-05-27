@@ -122,7 +122,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
 
 def schedule_weekday_reminders(application: Application) -> None:
     tz = ZoneInfo(TZ_NAME)
-    minutes_of_day = list(range(10 * 60 + 30, 19 * 60 + 31, 45))
+    minutes_of_day = list(range(10 * 60 + 30, 19 * 60 + 31, 60))
 
     for total_minutes in minutes_of_day:
         hour = total_minutes // 60
